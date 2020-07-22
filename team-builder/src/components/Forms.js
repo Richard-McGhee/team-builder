@@ -18,10 +18,35 @@ export default function Forms() {
     alert(`Here's your team: ${teamData}!`)
   }
   return (
-    <form>
+    <form onSubmit={onFormSubmit}>
         <input
-        placeholder='testing'
+        id='devNameId'
+        name='devName'
+        placeholder='Give us a name'
         type='text'
+        onChange={onValueChange}
+        /><br/>
+
+        <input
+        id='devEmailId'
+        name='devEmail'
+        placeholder='Your Email?'
+        type='text'
+        onChange={onValueChange}
+        /><br/>
+
+        <input
+        id='devRoleId'
+        name='devRole'
+        placeholder='What do you do?'
+        type='text'
+        onChange={onValueChange}
+        /><br/>
+
+        <input
+        id='devSubmitId'
+        name='devSubmit'
+        type='submit'
         />
     </form>
   );
