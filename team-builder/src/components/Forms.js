@@ -20,7 +20,8 @@ export default function Forms() {
   const teamCall = () => alert(`Here's your Teammate: Name - ${teamMember.devName}, Email - ${teamMember.devEmail}, Their Role - ${teamMember.devRole}!
   This is the full team!
   Team Member:
-  ${listTeam}`)
+  ${listTeam}
+  --------------------------------`)
   const onFormSubmit = evt => {
     evt.preventDefault()
     setFullTeam([...fullTeam, teamMember])
