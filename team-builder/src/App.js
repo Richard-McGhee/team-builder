@@ -3,8 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const [ team, setTeam ] = useState(null)
-  
+  const [ team, setTeam ] = useState('')
+
   return (
     <div className="App">
       <header className="App-header">
