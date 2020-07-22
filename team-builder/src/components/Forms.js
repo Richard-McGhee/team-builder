@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function Forms() {
-  const [ fullTeam, setFullTeam ] = useState('') 
+  const [ fullTeam, setFullTeam ] = useState([]) 
   const [ teamMember, setTeamMember ] = useState({
     devName:'',
     devEmail:'',
@@ -12,18 +12,23 @@ export default function Forms() {
       ...teamMember,
       [ evt.target.name]: evt.target.value
     })
-    setFullTeam(teamMember)
     
   }
+  const listTeam = fullTeam.map(item => (
+      `${item.devName} - ${item.devEmail} - ${item.devRole}`
+  ))
   const teamCall = () => alert(`Here's your Teammate: Name - ${teamMember.devName}, Email - ${teamMember.devEmail}, Their Role - ${teamMember.devRole}!
   This is the full team!
-  ${fullTeam}`)
+  Team Member:
+  ${listTeam}`)
   const onFormSubmit = evt => {
     evt.preventDefault()
+    setFullTeam([...fullTeam, teamMember])
     teamCall()
     console.log('TEAM', fullTeam)
     console.log('MEMBER', teamMember)
   }
+
   return (
     <form onSubmit={onFormSubmit}>
         <input
