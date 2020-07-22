@@ -14,6 +14,7 @@ export default function Forms() {
     })
     
   }
+
   const listTeam = fullTeam.map(item => (
       `${item.devName} - ${item.devEmail} - ${item.devRole}`
   ))
